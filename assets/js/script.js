@@ -59,7 +59,9 @@ ImCoder.prototype.bind = function () {
 
             var lang = 'langs/' + $(this).text() + '.txt';
 
-            $.get(lang, function(data) {
+            $.ajax(lang, {
+                dataType: text
+            }).then(function(data) {
                 that.text = '\n' + data;
             });
 
